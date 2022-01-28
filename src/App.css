@@ -5,11 +5,31 @@ html, body, #root, .App, #canvas-container {
 .App {
   text-align: center;
   height: 100%;
+  display: flex;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+#canvas-container {
+  flex-grow: 1;
+}
+
+#sidebar {
+  flex: 0 0 auto;
+  width: 200px;
+  padding: 20px;
+  background-color: #000;
+  color: #fff;
+}
+
+.details {
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #fff;
+  margin-bottom: 4px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
