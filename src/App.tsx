@@ -41,9 +41,9 @@ const ParallelepipedComponent = ({ a, b, c }: Parallelepiped) => {
     { start: b, end: vb.clone().add(vc).toArray() },
     { start: c, end: vc.clone().add(va).toArray() },
     { start: c, end: vc.clone().add(vb).toArray() },
-    { start: va.clone().add(vb).toArray(), end: vb.clone().add(vc.clone().add(va)).toArray() },
-    { start: va.clone().add(vc).toArray(), end: vb.clone().add(vc.clone().add(va)).toArray() },
-    { start: vc.clone().add(vb).toArray(), end: vb.clone().add(vc.clone().add(va)).toArray() },
+    { start: va.clone().add(vb).toArray(), end: va.clone().add(vb.clone().add(vc)).toArray() },
+    { start: va.clone().add(vc).toArray(), end: va.clone().add(vb.clone().add(vc)).toArray() },
+    { start: vb.clone().add(vc).toArray(), end: va.clone().add(vb.clone().add(vc)).toArray() },
   ]
 
   /*useLayoutEffect(() => {
