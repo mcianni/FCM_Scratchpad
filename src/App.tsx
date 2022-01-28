@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { Canvas, useFrame, useThree, Vector3 } from '@react-three/fiber';
 import React, { useRef, useLayoutEffect, useEffect, useMemo } from 'react';
 import { OrbitControls, Line, Box, Sphere } from '@react-three/drei';
+import { dot, cross} from 'mathjs';
 import './App.css';
 
 type vector = [number, number, number]
@@ -50,6 +51,8 @@ const Parallelpiped = (props:{a:vector, b:vector, c:vector}) => {
     { start: vc.clone().add(vb).toArray(), end: vb.clone().add(vc.clone().add(va)).toArray() },
   ]
 
+  const cp = dot(cross(props.a, props.b), props.c)
+  console.log(cp)
   /*useLayoutEffect(() => {
     ref?.current?.geometry?.setFromPoints(vertices)
     ref?.current?.geometry?.setAttribute('position', new THREE.BufferAttribute(vertices, 3))
